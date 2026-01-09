@@ -1,0 +1,103 @@
+[ {
+  "@id" : "http://data.europa.eu/88u/dataset/ignf_bd-topo~~2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#FR-BDTOPO"
+  } ]
+}, {
+  "@id" : "http://data.europa.eu/88u/dataset/os-mastermap-topography-layer2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#UK-OSMasterMapTopo"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Concepts related to buiding changes and densification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Knowledge graph of building changes and urban densification"
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://purl.org/www.umr-lastig.fr/geodata"
+  }, {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#"
+  }, {
+    "@id" : "http://www.w3.org/ns/dcat3"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#BuildingChange",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "This is some change of one or more buildings -e.g. creation, demolition, change of use-. These can be changes of real world building entities, or changes of building data, or both. One same class is used to represent these different things because distinguishing them would lead to verbose and complexe models. A BuildingChange can be associated with geodata that represent it, this is stored as a property called buildingChangeFeatures which is a query to identify this data."
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#ChangeCollection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "This is a collection of ChangeItem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/www.umr-lastig.fr/geodata#Collection"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#ChangeItem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A change item is a specific case of building change in reality, that can be of different sizes (e.g. destruction of a building, or development of a residential neighbour over several years), that is observed through data (different data like aerial imagery before and after, change features if they exist, etc.) and described through narratives (acquired on the Web or collected during experts sessions)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/www.umr-lastig.fr/geodata#CollectionItem"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#DensificationStudy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A specific activity where actors express and share questions and other actors, possibly the same, try and inform these questions through data."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/prov#Activity"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#FR-BDTOPO",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/ns/dcat#Dataset" ]
+}, {
+  "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#FR-BDTopo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/BuildingChange/"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#UK-OSMasterMapTopo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/ns/dcat#Dataset" ]
+}, {
+  "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#UrbanDensification",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@value" : "https://github.com/subdense/dashboard/blob/master/Concepts/Concepts.md#urban-densification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "General concept of urban densification, clarified through SUBDENSE dashboard, https://github.com/subdense/dashboard/blob/master/Concepts/Concepts.md#urban-densification"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Urban Densification"
+  } ]
+}, {
+  "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#member",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#ChangeCollection"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#ChangeItem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#member"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#Activity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+} ]

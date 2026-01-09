@@ -1,0 +1,98 @@
+@prefix : <http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#> .
+
+<http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG> rdf:type owl:Ontology ;
+                                                                             owl:imports <http://purl.org/www.umr-lastig.fr/geodata> ,
+                                                                                         rdfs: ,
+                                                                                         <http://www.w3.org/ns/dcat3> ;
+                                                                             rdfs:comment "Concepts related to buiding changes and densification"@en ;
+                                                                             rdfs:label "Knowledge graph of building changes and urban densification" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#member
+:member rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf rdfs:member ;
+        rdfs:domain :ChangeCollection ;
+        rdfs:range :ChangeItem .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#BuildingChange
+:BuildingChange rdf:type owl:Class ;
+                rdfs:comment "This is some change of one or more buildings -e.g. creation, demolition, change of use-. These can be changes of real world building entities, or changes of building data, or both. One same class is used to represent these different things because distinguishing them would lead to verbose and complexe models. A BuildingChange can be associated with geodata that represent it, this is stored as a property called buildingChangeFeatures which is a query to identify this data."@en .
+
+
+###  http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#ChangeCollection
+:ChangeCollection rdf:type owl:Class ;
+                  rdfs:subClassOf <http://purl.org/www.umr-lastig.fr/geodata#Collection> ;
+                  rdfs:comment "This is a collection of ChangeItem" .
+
+
+###  http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#ChangeItem
+:ChangeItem rdf:type owl:Class ;
+            rdfs:subClassOf <http://purl.org/www.umr-lastig.fr/geodata#CollectionItem> ;
+            rdfs:comment "A change item is a specific case of building change in reality, that can be of different sizes (e.g. destruction of a building, or development of a residential neighbour over several years), that is observed through data (different data like aerial imagery before and after, change features if they exist, etc.) and described through narratives (acquired on the Web or collected during experts sessions)." .
+
+
+###  http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#DensificationStudy
+:DensificationStudy rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
+                    rdfs:comment "A specific activity where actors express and share questions and other actors, possibly the same, try and inform these questions through data." .
+
+
+###  http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#UrbanDensification
+:UrbanDensification rdf:type owl:Class ;
+                    <http://purl.org/dc/terms/description> "https://github.com/subdense/dashboard/blob/master/Concepts/Concepts.md#urban-densification" ;
+                    rdfs:comment "General concept of urban densification, clarified through SUBDENSE dashboard, https://github.com/subdense/dashboard/blob/master/Concepts/Concepts.md#urban-densification" ;
+                    rdfs:label "Urban Densification" .
+
+
+###  http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://data.europa.eu/88u/dataset/os-mastermap-topography-layer2
+<http://data.europa.eu/88u/dataset/os-mastermap-topography-layer2> rdf:type owl:NamedIndividual ;
+                                                                   owl:sameAs :UK-OSMasterMapTopo .
+
+
+###  http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#UK-OSMasterMapTopo
+
+###  http://data.europa.eu/88u/dataset/ignf_bd-topo~~2
+<http://data.europa.eu/88u/dataset/ignf_bd-topo~~2> rdf:type owl:NamedIndividual ;
+                                                    owl:sameAs :FR-BDTOPO .
+
+
+###  http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#FR-BDTOPO
+
+###  http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#FR-BDTOPO
+:FR-BDTOPO rdf:type owl:NamedIndividual ,
+                    <http://www.w3.org/ns/dcat#Dataset> .
+
+
+###  http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#FR-BDTopo
+:FR-BDTopo rdf:type owl:NamedIndividual ;
+           rdfs:seeAlso <http://www.semanticweb.org/bbucher/ontologies/2025/6/BuildingChange/> .
+
+
+###  http://www.semanticweb.org/bbucher/ontologies/2025/6/UrbanDensificationKG#UK-OSMasterMapTopo
+:UK-OSMasterMapTopo rdf:type owl:NamedIndividual ,
+                             <http://www.w3.org/ns/dcat#Dataset> .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
