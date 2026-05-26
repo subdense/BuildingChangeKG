@@ -1,6 +1,6 @@
 # Urban Densification Knowledge Graph
 
-This repository stores a set of classes, properties and instances which are further used to assist scientists and practitioners in their sharing and reuse of different expertise and assets relevant to geodata-driven study of urban densification. Particular geodata of interest are : Buildings, Building changes.  
+This knowledge graph (see rdf file in this repository) contains : classes, properties and instances relevant to derive Building changes data relevant to urban densification studies.  
 
 **[Documentation site](https://subdense.github.io/urbanDensificationKG/index.html)**
 
